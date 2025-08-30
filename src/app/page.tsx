@@ -1,9 +1,18 @@
-import React from 'react'
+import Hero from "@/components/sections/Hero";
+import "./globals.css";
+import AboutPreview from "@/components/sections/AboutPreview";
+import Skills from "@/components/sections/Skills";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import ContactCTA from "@/components/sections/ContactCTA";
 
-function page() {
+export default function Home() {
   return (
-    <div>page</div>
+  <div className="">
+    <Hero />
+    <AboutPreview/>
+    <Skills/>
+    <FeaturedProjects/>
+    <ContactCTA/>
+  </div>
   )
 }
-
-export default page
