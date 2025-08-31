@@ -2,20 +2,27 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { contactSchema, IContactForm } from "@/lib/validation/contactSchema";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function ContactPage() {
+  const [message, setMessage] = useState<string>("");
 
-  const [message, setMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IContactForm>({
+    resolver: yupResolver(contactSchema),
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    
-    e.preventDefault();
-    setMessage("✅ Thanks for reaching out! I'll get back to you soon.");
-    
+  const onSubmit = (data: IContactForm) => {
+    console.log(data);
+    setMessage("✅ Message sent successfully!");
   };
 
   return (
-    
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 text-gray-100 px-6 py-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -26,25 +33,50 @@ export default function ContactPage() {
         <h1 className="text-4xl font-extrabold mb-6 text-center text-white">
           Contact Me
         </h1>
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <input
-            type="text"
-            placeholder="Your Name"
-            required
-            className="w-full rounded-lg p-3 bg-white/10 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-100 placeholder-gray-400"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            required
-            className="w-full rounded-lg p-3 bg-white/10 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-100 placeholder-gray-400"
-          />
-          <textarea
-            placeholder="Your Message"
-            required
-            rows={4}
-            className="w-full rounded-lg p-3 bg-white/10 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-100 placeholder-gray-400"
-          />
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          {/* Name */}
+          <div>
+            <input
+              {...register("name")}
+              type="text"
+              placeholder="Your Name"
+              className="w-full rounded-lg p-3 bg-white/10 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-100 placeholder-gray-400"
+            />
+            {errors.name && (
+              <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
+            )}
+          </div>
+
+          {/* Email */}
+          <div>
+            <input
+              {...register("email")}
+              type="email"
+              placeholder="Your Email"
+              className="w-full rounded-lg p-3 bg-white/10 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-100 placeholder-gray-400"
+            />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
+            )}
+          </div>
+
+          {/* Message */}
+          <div>
+            <textarea
+              {...register("message")}
+              rows={4}
+              placeholder="Your Message"
+              className="w-full rounded-lg p-3 bg-white/10 border border-white/20 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-100 placeholder-gray-400"
+            />
+            {errors.message && (
+              <p className="mt-1 text-sm text-red-400">
+                {errors.message.message}
+              </p>
+            )}
+          </div>
+
+          {/* Submit Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -54,6 +86,8 @@ export default function ContactPage() {
             Send Message
           </motion.button>
         </form>
+
+        {/* Success message */}
         {message && (
           <motion.p
             initial={{ opacity: 0 }}
