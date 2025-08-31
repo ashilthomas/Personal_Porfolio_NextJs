@@ -28,7 +28,7 @@ export default function About() {
     <section
       ref={ref}
       id="about"
-      className="relative min-h-[100vh] flex items-center justify-center px-6 py-20 overflow-hidden bg-[#0a0a0a] text-gray-100"
+      className="relative  flex items-center justify-center px-6 py-20 overflow-hidden bg-[#0a0a0a] text-gray-100"
     >
       {/* Background gradient */}
       <motion.div

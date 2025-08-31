@@ -18,7 +18,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 py-20 bg-[#0a0a0a] text-gray-100 overflow-hidden"
+      className="relative  flex flex-col items-center justify-center px-6 py-20 bg-[#0a0a0a] text-gray-100 overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-[#0a0a0a] via-[#111827] to-[#0a0a0a]" />
