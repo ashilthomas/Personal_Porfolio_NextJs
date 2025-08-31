@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/Hero";
-import "./globals.css";
 import AboutPreview from "@/components/sections/AboutPreview";
 import Skills from "@/components/sections/Skills";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { contactSchema, IContactForm } from "@/lib/validation/contactSchema";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { sendMessage } from "@/lib/helpers/sendMessage";
 
 export default function ContactPage() {
 
@@ -22,8 +23,8 @@ export default function ContactPage() {
   });
 
   const onSubmit = (data: IContactForm) => {
-    console.log(data);
-    setMessage("✅ Message sent successfully!");
+    sendMessage(data)
+    
   };
 
   return (
