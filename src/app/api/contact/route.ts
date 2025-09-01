@@ -1,5 +1,8 @@
+
+
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+console.log(process.env.EMAIL_USER);
 
 export async function POST(req: Request) {
   console.log(req.body);
@@ -13,7 +16,7 @@ export async function POST(req: Request) {
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER, // your Gmail
-        pass: process.env.EMAIL_PASS, // your Gmail App Password (not normal password!)
+        pass: process.env.EMAIL_PASS , // your Gmail App Password (not normal password!)
       },
     });
 

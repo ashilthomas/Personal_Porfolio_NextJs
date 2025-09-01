@@ -5,6 +5,7 @@ import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import ContactCTA from "@/components/sections/ContactCTA";
 
 export default function Home() {
+  console.log(process.env.EMAIL_USER);
   return (
   <div className="">
     <Hero />
