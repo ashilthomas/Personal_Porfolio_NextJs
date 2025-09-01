@@ -3,32 +3,121 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 
-const projects = [
+// Define project type
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  github?: string; // optional (for single repo projects)
+  frontend?: string;
+  backend?: string;
+  demo?: string;
+};
+
+const projects: Project[] = [
   {
-    title: "Portfolio Website",
+    title: "Ai image generator",
     description:
-      "A modern portfolio built with Next.js, Tailwind CSS, and Framer Motion for smooth animations.",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://yourportfolio.com",
+      "AI-powered image generator using Clip Drop.",
+    tech: ["React.js", "Razorpay", "Clip Drop","nodejs"],
+    frontend: "https://github.com/ashilthomas/AiImagefy.git",
+     backend: "https://github.com/ashilthomas/AiImagerfy_BE.git",
+    demo: "https://aiimagefy.netlify.app/",
   },
   {
     title: "E-Commerce Store",
     description:
-      "Full-stack e-commerce store with product filtering, cart, and Stripe payments.",
-    tech: ["Next.js", "TypeScript", "Stripe"],
-    github: "https://github.com/yourusername/ecommerce",
-    demo: "https://ecommerce-demo.com",
+      "Full-stack e-commerce store with product filtering, cart, and Razorpay payments.",
+    tech: ["React.js", "Node.js", "MongoDB"],
+    frontend: "https://github.com/ashilthomas/FoodOrderWebsite_frontend.git",
+    backend: " https://github.com/ashilthomas/FoodOrderWebsite_Backend.git",
+    demo: "https://foodorderweb1.netlify.app/",
   },
+ 
   {
-    title: "Chat Application",
+    title: "AI Chat Bot Application",
     description:
       "Real-time chat app with authentication and live messaging.",
-    tech: ["Next.js", "Socket.io", "MongoDB"],
-    github: "https://github.com/yourusername/chatapp",
-    demo: "https://chatapp-demo.com",
+    tech: ["React.js", "TypeScript", "MongoDB"],
+  frontend: "https://github.com/ashilthomas/AiChatbot-FE.git",
+    backend: " https://github.com/ashilthomas/AiChatbot-BE.git",
+    demo: "https://aichatbotts.netlify.app/",
+  },
+  {
+    title: "book store website",
+    description:
+      "Online book store with browsing, cart, and checkout features.",
+    tech: ["React.js", "mongoDB", "node.js","Razorpay"],
+  frontend: "https://github.com/ashilthomas/online-bookstore-frontend.git",
+    backend: "https://github.com/ashilthomas/online-bookstore-backend.git",
+    demo: "https://online-bookstore-web.netlify.app/",
+  },
+  {
+    title: "Simple prodcut page",
+    description:
+      "sample project for filter and search functionality and cart, and checkout features.",
+    tech: ["React.js","CSS","Api"],
+  frontend: "https://github.com/ashilthomas/sample_Filter_Search_web.git",
+    demo: "https://sample-filter-search-web.vercel.app/",
+  },
+  {
+    title: "Basic Weather app",
+    description:
+      "A simple weather app that fetches and displays weather data from an external API.",
+    tech: ["Javascript","CSS","Html"],
+  frontend: "https://github.com/ashilthomas/weatherapp-js.git",
+    demo: " https://ashilthomas.github.io/weatherapp-js/",
+  },
+  {
+    title: "Static web page",
+    description:
+      "A simple static web page using html and css.",
+    tech: ["Javascript","CSS","Html"],
+  frontend: "https://github.com/ashilthomas/static-website-furniture.git",
+    demo: "https://ashilthomas.github.io/static-website-furniture/",
+  },
+  {
+    title: "Static Netflix page",
+    description:
+      "A simple static Netflix page using html and css.",
+    tech: ["Javascript","CSS","Html"],
+  frontend: "https://github.com/ashilthomas/static_netflix_web.git",
+    demo: "https://ashilthomas.github.io/static-website-furniture/",
+  },
+  {
+    title: "Static autocomplete search page",
+    description:
+      "A simple static autocomplete search page using html and css.",
+    tech: ["Javascript","CSS","Html"],
+  frontend: "https://github.com/ashilthomas/simple_autocomplete_search_web.git",
+    demo: "https://ashilthomas.github.io/simple_autocomplete_search_web/",
+  },
+  {
+    title: "Simple image gallery page",
+    description:
+      "A simple static image gallery page using html and css.",
+    tech: ["Javascript","CSS","Html"],
+  frontend: "https://github.com/ashilthomas/simple_image_gallery_web.git",
+    demo: " https://ashilthomas.github.io/simple_image_gallery_web/",
+  },
+  {
+    title: "portfolio website",
+    description:
+      "A simple portfolio website using html and css.",
+    tech: ["Javascript","CSS","Html","bootstrap"],
+  frontend: "https://github.com/ashilthomas/Portfolio_web1.git",
+    demo: "https://portfolio-web1-zeta.vercel.app/",
+  },
+  {
+    title: "portfolio website 2",
+    description:
+      "A simple portfolio website using html bootstrap",
+    tech: ["Javascript","Html","bootstrap"],
+  frontend: "https://github.com/ashilthomas/Portfolio_web2.git",
+    demo: "https://portfolio-web2-livid.vercel.app/",
   },
 ];
+
 
 export default function ProjectsPage() {
   return (
@@ -72,20 +161,45 @@ export default function ProjectsPage() {
 
               {/* Links */}
               <div className="flex space-x-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
-                >
-                  <Github size={18} /> Code
-                </a>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
-                >
-                  <ExternalLink size={18} /> Demo
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
+                  >
+                    <Github size={18} /> Code
+                  </a>
+                )}
+
+                {project.frontend && (
+                  <a
+                    href={project.frontend}
+                    target="_blank"
+                    className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
+                  >
+                    <Github size={18} /> Frontend
+                  </a>
+                )}
+
+                {project.backend && (
+                  <a
+                    href={project.backend}
+                    target="_blank"
+                    className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
+                  >
+                    <Github size={18} /> Backend
+                  </a>
+                )}
+
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition"
+                  >
+                    <ExternalLink size={18} /> Demo
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
