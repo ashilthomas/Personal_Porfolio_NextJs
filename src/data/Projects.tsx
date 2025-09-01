@@ -27,4 +27,34 @@ export const projects: Project[] = [
     description: "Full-stack e-commerce app with Stripe integration.",
     link: "https://github.com/username/ecommerce",
   },
+  {
+    id: "4",
+    title: "E-commerce App",
+    description: "Full-stack e-commerce app with Stripe integration.",
+    link: "https://github.com/username/ecommerce",
+  },
+  {
+    id: "5",
+    title: "E-commerce App",
+    description: "Full-stack e-commerce app with Stripe integration.",
+    link: "https://github.com/username/ecommerce",
+  },
+  {
+    id: "6",
+    title: "E-commerce App",
+    description: "Full-stack e-commerce app with Stripe integration.",
+    link: "https://github.com/username/ecommerce",
+  },
+  {
+    id: "7",
+    title: "E-commerce App",
+    description: "Full-stack e-commerce app with Stripe integration.",
+    link: "https://github.com/username/ecommerce",
+  },
+  {
+    id: "8",
+    title: "E-commerce App",
+    description: "Full-stack e-commerce app with Stripe integration.",
+    link: "https://github.com/username/ecommerce",
+  },
 ];

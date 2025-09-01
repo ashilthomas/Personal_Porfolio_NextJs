@@ -2,7 +2,7 @@
 
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-console.log(process.env.EMAIL_USER);
+
 
 export async function POST(req: Request) {
   console.log(req.body);

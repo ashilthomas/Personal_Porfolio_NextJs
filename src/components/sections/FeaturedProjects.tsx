@@ -3,8 +3,10 @@
 import { projects } from "@/data/Projects";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import React from "react";
 
 export default function FeaturedProjects() {
+  const [sliceProJect,setSlice]=React.useState(3);
   return (
     <section
       id="projects"
@@ -47,7 +49,7 @@ export default function FeaturedProjects() {
           visible: { transition: { staggerChildren: 0.15 } },
         }}
       >
-        {projects.slice(0, 3).map((project) => (
+        {projects.slice(0, sliceProJect).map((project) => (
           <motion.div
             key={project.id}
             variants={{

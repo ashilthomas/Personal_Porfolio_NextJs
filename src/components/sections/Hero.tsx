@@ -98,17 +98,17 @@ export default function Hero(): JSX.Element {
         className="relative z-10 max-w-4xl"
       >
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight">
-          Crafting <span className="text-blue-400">Cinematic</span>{" "}
+         MERN <span className="text-blue-400">Stack</span>{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-400">
-            Web Experiences
+            Web Developer
           </span>
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
-          I’m <span className="font-semibold text-white">John Doe</span> — a
+          I’m <span className="font-semibold text-white">Ashil Thomas</span> — a
           full-stack developer building immersive, high-performance sites with{" "}
-          <span className="text-blue-400">Next.js</span> and{" "}
-          <span className="text-purple-400">TypeScript</span>.
+          <span className="text-blue-400">Next.js/React.Js</span> and{" "}
+          <span className="text-purple-400">Javascript</span>.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">

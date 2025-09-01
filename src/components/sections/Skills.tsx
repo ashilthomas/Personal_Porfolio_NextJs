@@ -3,14 +3,20 @@
 import { motion } from "framer-motion";
 
 const skills: string[] = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Express.js",
+  "MongoDB",
+  "NoSQL",
   "Next.js",
   "TypeScript",
   "React",
   "TailwindCSS",
   "Node.js",
   "Framer Motion",
-  "GraphQL",
-  "PostgreSQL",
+  "Git",
+
   "Docker",
 ];
 

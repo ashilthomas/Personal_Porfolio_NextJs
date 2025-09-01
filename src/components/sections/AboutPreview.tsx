@@ -72,7 +72,7 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-lg sm:text-xl text-gray-400 leading-relaxed"
         >
-          I’m <span className="text-white font-semibold">John Doe</span>, a
+          I’m <span className="text-white font-semibold">Ashil</span>, a
           full-stack developer with a passion for{" "}
           <span className="text-blue-400">interactive design</span> and{" "}
           <span className="text-purple-400">cutting-edge technology</span>.  
