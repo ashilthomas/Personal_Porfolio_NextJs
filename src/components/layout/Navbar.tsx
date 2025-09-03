@@ -17,15 +17,18 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-gray-300 font-medium">
-          <Link href="/about" className="hover:text-white transition">
+          <a href="#about" className="hover:text-white transition">
             About
-          </Link>
-          <Link href="/projects" className="hover:text-white transition">
+          </a>
+          <a href="#projects" className="hover:text-white transition">
             Projects
-          </Link>
-          <Link href="/contact" className="hover:text-white transition">
+          </a>
+          <a href="#contact" className="hover:text-white transition">
             Contact
-          </Link>
+          </a>
+          <a href="#skills" className="hover:text-white transition">
+          Skills
+          </a>
         </div>
 
         {/* Mobile Menu Button */}

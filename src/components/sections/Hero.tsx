@@ -58,7 +58,7 @@ export default function Hero(): JSX.Element {
   };
 
   return (
-    <section
+    <section id="hero"
       ref={containerRef}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}

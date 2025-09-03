@@ -11,13 +11,20 @@ const skills: string[] = [
   "NoSQL",
   "Next.js",
   "TypeScript",
-  "React",
+  "React.js",
   "TailwindCSS",
   "Node.js",
   "Framer Motion",
   "Git",
-
   "Docker",
+  "Bootstrap",
+  "Razorpay",
+  "REST APIs",
+  "Postman",
+  "Vercel",
+  "Netlify",
+  "Redux",
+
 ];
 
 export default function Skills() {

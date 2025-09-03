@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ContactCTA() {
   return (
-    <section className="relative py-20 text-center text-gray-100 overflow-hidden rounded-2xl my-16 max-w-5xl mx-auto">
+    <section id="contact" className="relative py-20 text-center text-gray-100 overflow-hidden rounded-2xl my-16 max-w-5xl mx-auto">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-br from-blue-700 via-indigo-800 to-blue-900 rounded-2xl" />
 
