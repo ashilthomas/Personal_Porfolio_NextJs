@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import { Ubuntu } from "next/font/google";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: [ "500",], // whichever you need
+});
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -21,7 +26,7 @@ export default function RootLayout({
   return (
     
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
+      <body className={`${ubuntu.className} bg-gray-50 text-gray-900`}>
         <Navbar />
         <main className="min-h-screen container mx-auto ">
           {children}
