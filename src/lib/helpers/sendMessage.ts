@@ -1,6 +1,6 @@
-export async function sendMessage(data: any) {
-  console.log(data);
-  
+import type { IContactForm } from "@/lib/validation/contactSchema";
+
+export async function sendMessage(data: IContactForm): Promise<{ success: boolean }> {
   try {
     const res = await fetch("/api/contact", {
       method: "POST",
@@ -11,7 +11,6 @@ export async function sendMessage(data: any) {
     if (!res.ok) throw new Error("Request failed");
     return { success: true };
   } catch (err) {
-   
     console.error(err);
     return { success: false };
   }

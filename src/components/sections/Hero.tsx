@@ -27,16 +27,25 @@ export default function Hero(): JSX.Element {
 
   // -- Compose layer transforms by combining scroll + pointer
   // background (very subtle)
-  const bgY = useTransform([smoothProgress, pointerYSpring], ([s, p]) => s * 30 + p * 6);
-  const bgX = useTransform(pointerXSpring, (p) => p * 10);
+  const bgY = useTransform([smoothProgress, pointerYSpring], (values) => {
+    const [s, p] = values as [number, number];
+    return s * 30 + p * 6;
+  });
+  const bgX = useTransform(pointerXSpring, (p: number) => p * 10);
 
   // mid layer (breathing blob)
-  const midY = useTransform([smoothProgress, pointerYSpring], ([s, p]) => s * 60 + p * 14);
-  const midX = useTransform(pointerXSpring, (p) => p * 18);
+  const midY = useTransform([smoothProgress, pointerYSpring], (values) => {
+    const [s, p] = values as [number, number];
+    return s * 60 + p * 14;
+  });
+  const midX = useTransform(pointerXSpring, (p: number) => p * 18);
 
   // foreground (text & primary content moves most)
-  const fgY = useTransform([smoothProgress, pointerYSpring], ([s, p]) => s * 140 + p * 28);
-  const fgX = useTransform(pointerXSpring, (p) => p * 30);
+  const fgY = useTransform([smoothProgress, pointerYSpring], (values) => {
+    const [s, p] = values as [number, number];
+    return s * 140 + p * 28;
+  });
+  const fgX = useTransform(pointerXSpring, (p: number) => p * 30);
 
   // subtle scale of hero with scroll (makes cinematic dissolve)
   const heroScale = useTransform(smoothProgress, [0, 0.7], [1, 0.94]);

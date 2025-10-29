@@ -1,15 +1,13 @@
+
+
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/app/globals.css";
 import { Ubuntu } from "next/font/google";
+import "@/app/globals.css";
+import ClientLayoutShell from "@/components/ui/ClientLayoutShell";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
 const ubuntu = Ubuntu({
   subsets: ["latin"],
-  weight: [ "500",], // whichever you need
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {
@@ -18,20 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    
     <html lang="en">
       <body className={`${ubuntu.className} bg-gray-50 text-gray-900`}>
-        <Navbar />
-        <main className="min-h-screen container mx-auto ">
-          {children}
-        </main>
-        <Footer />
+        <ClientLayoutShell>{children}</ClientLayoutShell>
       </body>
     </html>
   );

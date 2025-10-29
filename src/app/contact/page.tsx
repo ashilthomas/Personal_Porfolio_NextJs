@@ -22,9 +22,13 @@ export default function ContactPage() {
     resolver: yupResolver(contactSchema),
   });
 
-  const onSubmit = (data: IContactForm) => {
-    sendMessage(data)
-    
+  const onSubmit = async (data: IContactForm) => {
+    const result = await sendMessage(data);
+    if (result?.success) {
+      setMessage("Thanks! Your message has been sent.");
+    } else {
+      setMessage("Sorry, something went wrong. Please try again later.");
+    }
   };
 
   return (
