@@ -106,7 +106,7 @@ export default function About() {
             },
             {
               title: "Creative Tech",
-              desc: "Exploring WebGL, animations, and interactive storytelling on the web.",
+              desc: "Delivering engaging animations, and interactive storytelling on the web.",
             },
           ].map((item, idx) => (
             <motion.div
