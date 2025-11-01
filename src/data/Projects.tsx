@@ -35,7 +35,16 @@ type Project = {
     tech: ["React.js", "TypeScript", "MongoDB"],
   frontend: "https://github.com/ashilthomas/AiChatbot-FE.git",
     backend: " https://github.com/ashilthomas/AiChatbot-BE.git",
-    demo: "https://aichatbotts.netlify.app/",
+    demo: "https://ai-chatbot-fe-beta.vercel.app/",
+  },
+  {
+    title: "job find application",
+    description:
+      "job matching application using resume",
+    tech: ["NextJs", "TypeScript", "MongoDB"],
+  frontend: "https://github.com/ashilthomas/resume_job_nextJs.git",
+  
+    demo: "https://resume-job-next-js-j6ge.vercel.app/",
   },
   {
     title: "Job Portal",
