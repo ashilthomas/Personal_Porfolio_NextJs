@@ -32,7 +32,7 @@ type Project = {
     title: "AI Chat Bot Application",
     description:
       "AI-powered chat application with user authentication and chat history.",
-    tech: ["React.js", "TypeScript", "MongoDB"],
+    tech: ["React.js", "TypeScript", "MongoDB","clerk auth"],
   frontend: "https://github.com/ashilthomas/AiChatbot-FE.git",
     backend: " https://github.com/ashilthomas/AiChatbot-BE.git",
     demo: "https://ai-chatbot-fe-beta.vercel.app/",
@@ -41,7 +41,7 @@ type Project = {
     title: "job find application",
     description:
       "job matching application using resume",
-    tech: ["NextJs", "TypeScript", "MongoDB"],
+    tech: ["NextJs", "TypeScript", "MongoDB","clerk auth"],
   frontend: "https://github.com/ashilthomas/resume_job_nextJs.git",
   
     demo: "https://resume-job-next-js-j6ge.vercel.app/",
